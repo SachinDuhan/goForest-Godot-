@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd3pwwyfypt75"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_al2q3"]
+[ext_resource type="Texture2D" uid="uid://ds8ilmx3rw2kw" path="res://Assets/The Adventurer - Free/Shadow.png" id="2_3khj6"]
+[ext_resource type="SpriteFrames" uid="uid://c4f08sksnfn3" path="res://Animations/Player/idle.tres" id="2_a676y"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Player/StateMachine.gd" id="4_fjbdi"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Player/idle.gd" id="5_6usjw"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/Player/walk.gd" id="6_dkk0q"]
+[ext_resource type="PackedScene" uid="uid://lgw7td7oavat" path="res://Scenes/console.tscn" id="7_srnn6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfafh"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, 1)
+slide_on_ceiling = false
+script = ExtResource("1_al2q3")
+
+[node name="Animations" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(1.4, 1.4)
+sprite_frames = ExtResource("2_a676y")
+animation = &"idle_left_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_qfafh")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -6)
+texture = ExtResource("2_3khj6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, 40)
+position_smoothing_enabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("4_fjbdi")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("walk_state")]
+script = ExtResource("5_6usjw")
+walk_state = NodePath("../Walk")
+state = "idle"
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state")]
+script = ExtResource("6_dkk0q")
+idle_state = NodePath("../Idle")
+state = "walk"
+
+[node name="Console" parent="." instance=ExtResource("7_srnn6")]

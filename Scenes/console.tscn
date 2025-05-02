@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://lgw7td7oavat"]
+
+[ext_resource type="Texture2D" uid="uid://cbti3eaingdur" path="res://Assets/Controller/arrow.png" id="2_ui2pq"]
+[ext_resource type="Texture2D" uid="uid://d1md2jkst14eg" path="res://Assets/Controller/A.png" id="3_cnwc6"]
+[ext_resource type="Texture2D" uid="uid://bw3fcwymqqdqn" path="res://Assets/Controller/arrow-pressed.png" id="3_ertsc"]
+[ext_resource type="Texture2D" uid="uid://m3enom642gvj" path="res://Assets/Controller/Apressed.png" id="4_3sajk"]
+[ext_resource type="Texture2D" uid="uid://mw7dmhgmrw8l" path="res://Assets/Controller/B.png" id="5_fy2ja"]
+[ext_resource type="Texture2D" uid="uid://dab1twcd3d4kg" path="res://Assets/Controller/Bpressed.png" id="6_ykvg1"]
+
+[node name="Console" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -173.0
+offset_right = 264.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MovePad" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="left_up" type="TouchScreenButton" parent="HBoxContainer/MovePad"]
+position = Vector2(33, 64)
+rotation = -0.785398
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("2_ui2pq")
+texture_pressed = ExtResource("3_ertsc")
+action = "move_left_up"
+
+[node name="left_down" type="TouchScreenButton" parent="HBoxContainer/MovePad"]
+position = Vector2(47, 115)
+rotation = -2.35619
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("2_ui2pq")
+texture_pressed = ExtResource("3_ertsc")
+action = "move_left_down"
+
+[node name="right_up" type="TouchScreenButton" parent="HBoxContainer/MovePad"]
+position = Vector2(80, 49)
+rotation = 0.785398
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("2_ui2pq")
+texture_pressed = ExtResource("3_ertsc")
+action = "move_right_up"
+
+[node name="right_down" type="TouchScreenButton" parent="HBoxContainer/MovePad"]
+position = Vector2(95, 99)
+rotation = 2.35619
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("2_ui2pq")
+texture_pressed = ExtResource("3_ertsc")
+action = "move_right_down"
+
+[node name="ActionPad" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+
+[node name="Abutton" type="TouchScreenButton" parent="HBoxContainer/ActionPad"]
+position = Vector2(53, 58)
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("3_cnwc6")
+texture_pressed = ExtResource("4_3sajk")
+
+[node name="Bbutton" type="TouchScreenButton" parent="HBoxContainer/ActionPad"]
+position = Vector2(73, 85)
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("5_fy2ja")
+texture_pressed = ExtResource("6_ykvg1")
