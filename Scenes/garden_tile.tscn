@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://bfhhawaieualg"]
+[gd_scene load_steps=8 format=4 uid="uid://bfhhawaieualg"]
 
 [ext_resource type="Texture2D" uid="uid://b1dngil14mx61" path="res://Assets/tilemap.png" id="1_3h3n0"]
 [ext_resource type="Script" path="res://Scenes/garden_tile.gd" id="1_yfj71"]
+[ext_resource type="PackedScene" uid="uid://cmxee6q52lrrj" path="res://Scenes/plants/bush_1_green.tscn" id="3_xkkqe"]
+[ext_resource type="PackedScene" uid="uid://cd3pwwyfypt75" path="res://Scenes/player.tscn" id="4_rq0w4"]
+[ext_resource type="PackedScene" uid="uid://lv3oasqn57io" path="res://Scenes/plants/flower_1_blue.tscn" id="5_d7j4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulwxv"]
 texture = ExtResource("1_3h3n0")
@@ -93,9 +96,27 @@ tile_layout = 5
 tile_size = Vector2i(32, 16)
 sources/1 = SubResource("TileSetAtlasSource_ulwxv")
 
-[node name="GardenTile" type="Node"]
+[node name="GardenTile" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(139, 108)
 script = ExtResource("1_yfj71")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAD/////AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wAAAQAAAAAAAAD9//7/AQAAAAAAAAD+//7/AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAAAAAIAAQAAAAAAAAD//wIAAQAAAAAAAAD+/wIAAQAAAAAAAAACAAMAAQAAAAAAAAABAAMAAQAAAAAAAAAAAAMAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wAAAQAAAAAAAAD8////AQAAAAAAAAD8//7/AQAAAAAAAAD8//3/AQAAAAAAAAD9//3/AQAAAAAAAAD+//3/AQAAAAAAAAD///3/AQAAAAAAAAAAAP3/AQAAAAAAAAABAP3/AQAAAAAAAAACAP3/AQAAAAAAAAACAAIAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAACAP//AQAAAAAAAAACAP7/AQAAAAAAAAD9////AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_bogja")
+
+[node name="Bush1-Green" parent="." instance=ExtResource("3_xkkqe")]
+position = Vector2(0, -9)
+
+[node name="Player" parent="." instance=ExtResource("4_rq0w4")]
+position = Vector2(45, -26)
+
+[node name="Flower1-Blue" parent="." instance=ExtResource("5_d7j4v")]
+position = Vector2(14, 12)
+
+[node name="Flower1-Blue2" parent="." instance=ExtResource("5_d7j4v")]
+position = Vector2(31, 20)
+
+[node name="Flower1-Blue3" parent="." instance=ExtResource("5_d7j4v")]
+position = Vector2(30, 4)

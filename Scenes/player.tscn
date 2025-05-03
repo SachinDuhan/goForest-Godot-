@@ -12,6 +12,7 @@
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(0, 1)
 slide_on_ceiling = false
 script = ExtResource("1_al2q3")

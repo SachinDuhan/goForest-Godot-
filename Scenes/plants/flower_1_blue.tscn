@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://lv3oasqn57io"]
+
+[ext_resource type="Texture2D" uid="uid://caiotd5uj3ixy" path="res://Assets/Pixel Art Flower Pack/Flower 1/Flower 1 - BLUE.png" id="1_ogvji"]
+
+[node name="Flower1-Blue" type="Sprite2D"]
+position = Vector2(0, -12)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_ogvji")
+offset = Vector2(0, 11)

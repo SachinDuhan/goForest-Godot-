@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmxee6q52lrrj"]
+
+[ext_resource type="Texture2D" uid="uid://28lcxp3fecnj" path="res://Assets/Pixel Art Flower Pack/Bush 1/Bush 1 - GREEN.png" id="1_yeiuh"]
+
+[node name="Bush1-Green" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(0, -6)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_yeiuh")
+offset = Vector2(0, 11)
