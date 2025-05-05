@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://hc8rfahxmmak"]
+
+[ext_resource type="PackedScene" uid="uid://8wijjmjfchy0" path="res://Scenes/layout.tscn" id="1_f6ys1"]
+[ext_resource type="PackedScene" uid="uid://bfhhawaieualg" path="res://Scenes/garden_tile.tscn" id="2_ywwpr"]
+[ext_resource type="PackedScene" uid="uid://lgw7td7oavat" path="res://Scenes/console.tscn" id="3_gm6ye"]
+[ext_resource type="Texture2D" uid="uid://rm162ykqsbrn" path="res://Assets/Controller/button_up.png" id="4_4e0xp"]
+[ext_resource type="PackedScene" uid="uid://cd3pwwyfypt75" path="res://Scenes/player.tscn" id="4_itt0x"]
+[ext_resource type="Texture2D" uid="uid://djgn5350ui8yk" path="res://Assets/Controller/button_down.png" id="5_8qxwu"]
+[ext_resource type="PackedScene" uid="uid://dgyb3k4vqap6u" path="res://Scenes/inv_ui.tscn" id="5_ii5bm"]
+[ext_resource type="Texture2D" uid="uid://bjygj6caccpar" path="res://Assets/Pixel Art Flower Pack/Flower 9/Flower 9 - ORANGE.png" id="6_tw1yy"]
+
+[node name="my shit" type="Node2D"]
+y_sort_enabled = true
+
+[node name="GardenTile" parent="." instance=ExtResource("2_ywwpr")]
+
+[node name="Console" parent="." instance=ExtResource("3_gm6ye")]
+
+[node name="Inv_UI" parent="Console" instance=ExtResource("5_ii5bm")]
+visible = false
+offset_top = 3.0
+offset_right = 275.0
+offset_bottom = 161.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Console"]
+position = Vector2(224, 364)
+scale = Vector2(1.4, 1.4)
+texture_normal = ExtResource("4_4e0xp")
+texture_pressed = ExtResource("5_8qxwu")
+action = "inventory"
+
+[node name="Sprite2D" type="Sprite2D" parent="Console/TouchScreenButton"]
+position = Vector2(8.57143, 7.85714)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_tw1yy")
+
+[node name="Player" parent="." instance=ExtResource("4_itt0x")]
+position = Vector2(141, 103)
+
+[node name="Layout" parent="." instance=ExtResource("1_f6ys1")]

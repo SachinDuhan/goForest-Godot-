@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://caxlojn4ptc71"]
+
+[ext_resource type="Script" path="res://inventory/invItem.gd" id="1_ljyvw"]
+[ext_resource type="Texture2D" uid="uid://caiotd5uj3ixy" path="res://Assets/Pixel Art Flower Pack/Flower 1/Flower 1 - BLUE.png" id="2_dd3gg"]
+
+[resource]
+script = ExtResource("1_ljyvw")
+name = "flower_1_blue"
+texture = ExtResource("2_dd3gg")

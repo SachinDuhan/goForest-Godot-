@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://8wijjmjfchy0"]
+
+[ext_resource type="Texture2D" uid="uid://cjf4hlbx7vu6g" path="res://Assets/button.png" id="1_fyfrm"]
+[ext_resource type="Texture2D" uid="uid://dr1g3m70t8bh7" path="res://Assets/button_pressed.png" id="2_y76aa"]
+[ext_resource type="FontFile" uid="uid://p12pd018uwsh" path="res://Assets/pixel_font.ttf" id="3_wuw3b"]
+[ext_resource type="Texture2D" uid="uid://b1dngil14mx61" path="res://Assets/tilemap.png" id="4_xn1l8"]
+[ext_resource type="Texture2D" uid="uid://pnw07mflfbjv" path="res://Assets/Pixel Art Flower Pack/Flower 2/Flower 2 - PINK.png" id="5_14lov"]
+
+[node name="Layout" type="CanvasLayer"]
+
+[node name="Container" type="Control" parent="."]
+self_modulate = Color(1, 0.180392, 1, 1)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Container/HBoxContainer"]
+self_modulate = Color(0, 0.745098, 0.752941, 1)
+position = Vector2(0, 2)
+scale = Vector2(2.8, 2.8)
+texture_normal = ExtResource("1_fyfrm")
+texture_pressed = ExtResource("2_y76aa")
+
+[node name="Label" type="Label" parent="Container/HBoxContainer/TouchScreenButton"]
+offset_left = 5.0
+offset_top = 4.64286
+offset_right = 37.0
+offset_bottom = 27.6429
+theme_override_fonts/font = ExtResource("3_wuw3b")
+theme_override_font_sizes/font_size = 6
+text = "SOCIAL"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Container/HBoxContainer"]
+self_modulate = Color(0, 0.745098, 0.752941, 1)
+position = Vector2(90, 2)
+scale = Vector2(2.8, 2.8)
+texture_normal = ExtResource("1_fyfrm")
+texture_pressed = ExtResource("2_y76aa")
+
+[node name="Label" type="Label" parent="Container/HBoxContainer/TouchScreenButton2"]
+visible = false
+offset_left = 3.57143
+offset_top = 5.0
+offset_right = 43.5714
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("3_wuw3b")
+theme_override_font_sizes/font_size = 6
+text = "MYSHIT"
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/HBoxContainer/TouchScreenButton2"]
+position = Vector2(15.7143, 8.21428)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_xn1l8")
+region_enabled = true
+region_rect = Rect2(31, 6, 34, 27)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Container/HBoxContainer/TouchScreenButton2"]
+y_sort_enabled = true
+position = Vector2(14.6429, 3.21429)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_14lov")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Container/HBoxContainer"]
+self_modulate = Color(0, 0.745098, 0.752941, 1)
+position = Vector2(180, 2)
+scale = Vector2(2.8, 2.8)
+texture_normal = ExtResource("1_fyfrm")
+texture_pressed = ExtResource("2_y76aa")
+
+[node name="Label" type="Label" parent="Container/HBoxContainer/TouchScreenButton3"]
+offset_left = 7.14285
+offset_top = 5.35714
+offset_right = 47.1429
+offset_bottom = 28.3571
+theme_override_fonts/font = ExtResource("3_wuw3b")
+theme_override_font_sizes/font_size = 6
+text = "SHOP"

@@ -36,6 +36,8 @@
 class_name Player
 extends CharacterBody2D
 
+@export var inv: Inventory
+
 @onready var state_machine: Node = $"StateMachine"
 @onready var animations: AnimatedSprite2D = $Animations
 

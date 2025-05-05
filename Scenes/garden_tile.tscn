@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://bfhhawaieualg"]
+[gd_scene load_steps=7 format=4 uid="uid://bfhhawaieualg"]
 
 [ext_resource type="Texture2D" uid="uid://b1dngil14mx61" path="res://Assets/tilemap.png" id="1_3h3n0"]
 [ext_resource type="Script" path="res://Scenes/garden_tile.gd" id="1_yfj71"]
 [ext_resource type="PackedScene" uid="uid://cmxee6q52lrrj" path="res://Scenes/plants/bush_1_green.tscn" id="3_xkkqe"]
-[ext_resource type="PackedScene" uid="uid://cd3pwwyfypt75" path="res://Scenes/player.tscn" id="4_rq0w4"]
 [ext_resource type="PackedScene" uid="uid://lv3oasqn57io" path="res://Scenes/plants/flower_1_blue.tscn" id="5_d7j4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulwxv"]
@@ -109,14 +108,20 @@ tile_set = SubResource("TileSet_bogja")
 [node name="Bush1-Green" parent="." instance=ExtResource("3_xkkqe")]
 position = Vector2(0, -9)
 
-[node name="Player" parent="." instance=ExtResource("4_rq0w4")]
-position = Vector2(45, -26)
-
 [node name="Flower1-Blue" parent="." instance=ExtResource("5_d7j4v")]
 position = Vector2(14, 12)
 
 [node name="Flower1-Blue2" parent="." instance=ExtResource("5_d7j4v")]
 position = Vector2(31, 20)
+
+[node name="Flower1-Blue4" parent="." instance=ExtResource("5_d7j4v")]
+position = Vector2(63, 5)
+
+[node name="Flower1-Blue5" parent="." instance=ExtResource("5_d7j4v")]
+position = Vector2(47, -3)
+
+[node name="Flower1-Blue6" parent="." instance=ExtResource("5_d7j4v")]
+position = Vector2(46, 12)
 
 [node name="Flower1-Blue3" parent="." instance=ExtResource("5_d7j4v")]
 position = Vector2(30, 4)
